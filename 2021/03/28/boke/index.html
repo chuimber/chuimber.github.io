@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    tags |  Chuimber
+    更换电脑或重装电脑后恢复博客管理 |  Chuimber
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -50,13 +50,192 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-boke"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  更换电脑或重装电脑后恢复博客管理
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/03/28/boke/" class="article-date">
+  <time datetime="2021-03-28T06:00:00.000Z" itemprop="datePublished">2021-03-28</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
+  </div>
   
-    <h1 class="page-type-title">Tags</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag">C语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E4%BA%AB/" rel="tag">分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E7%94%A8/" rel="tag">实用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%B4%E6%8A%A4/" rel="tag">维护</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E4%BC%A0/" rel="tag">自传</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">414</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">1 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="1-确保之前博客源代码文件夹及文件保存在公库或私库中"><a href="#1-确保之前博客源代码文件夹及文件保存在公库或私库中" class="headerlink" title="1.确保之前博客源代码文件夹及文件保存在公库或私库中"></a>1.确保之前博客源代码文件夹及文件保存在公库或私库中</h2><p>例如：<img src="https://i.loli.net/2021/03/28/YD9VgdT2RspK5JZ.png"></p>
+<p>我这里采用的是闭源存放方案，故为私库</p>
+<p><img src="https://i.loli.net/2021/03/28/ne6jgbKHmWaVshc.png" alt="2.png"></p>
+<p>这是源码文件样式</p>
+<h2 id="2-在新电脑上重新安装git，node-js"><a href="#2-在新电脑上重新安装git，node-js" class="headerlink" title="2.在新电脑上重新安装git，node.js"></a>2.在新电脑上重新安装git，node.js</h2><p>1.重新创建ssh密钥，建立本地与github联系。</p>
+<p>2.进入本地新仓库目录，右键gitbash</p>
+<blockquote>
+<p>git config –global user.name “xxxx”  #设置用户名</p>
+<p>git config –global user.email “xxxx”  #设置邮箱</p>
+</blockquote>
+<p>3.测试 ssh key</p>
+<blockquote>
+<p>输入 ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a></p>
+</blockquote>
+<p>​    </p>
+<p>​    系统会提示：</p>
+<p>​    The authenticity of host ‘github.com’ can’t be established.<br>​    RSA key fingerprint is ………………………..<br>​    Are you sure you want to continue connecting (yes/no)?</p>
+<p>​     输入yes即可</p>
+<p>4.拷贝仓库</p>
+<blockquote>
+<p>右建gitbash输入<code>git clone git@github.com:Username/[xxx].git</code>拷贝仓库到本地</p>
+</blockquote>
+<p>​    xxx指github博客源码仓库名</p>
+<p>5.在本地新拷贝的源码仓库中 <code>gitbash</code>执行</p>
+<blockquote>
+<p>npm install -g hexo-cli</p>
+<p>npm install</p>
+</blockquote>
+<h2 id="3-执行hexo-s查看是否成功预览本地博客界面"><a href="#3-执行hexo-s查看是否成功预览本地博客界面" class="headerlink" title="3.执行hexo s查看是否成功预览本地博客界面"></a>3.执行hexo s查看是否成功预览本地博客界面</h2><p>成功代表本地配置无误</p>
+<h2 id="4-改动博客内容执行git-commit、git-push查看云端博客源码仓库是否有提交记录"><a href="#4-改动博客内容执行git-commit、git-push查看云端博客源码仓库是否有提交记录" class="headerlink" title="4.改动博客内容执行git commit、git push查看云端博客源码仓库是否有提交记录"></a>4.改动博客内容执行git commit、git push查看云端博客源码仓库是否有提交记录</h2><h2 id="5-执行hexo-clean，hexo-g-d查看云端博客生成仓库是否有提交记录"><a href="#5-执行hexo-clean，hexo-g-d查看云端博客生成仓库是否有提交记录" class="headerlink" title="5.执行hexo clean，hexo g -d查看云端博客生成仓库是否有提交记录"></a>5.执行hexo clean，hexo g -d查看云端博客生成仓库是否有提交记录</h2><p>成功代表部署到云端的连接成功 即在新电脑上恢复了对博客的控制</p>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><blockquote>
+<p>此时可以发现预先创建源码存放仓库是很有用处的，如果提前不备份，会导致更换电脑后文件丢失</p>
+</blockquote>
+<p>源码存放方案分开源和闭源 具体教程参考：<a target="_blank" rel="noopener" href="https://akilar.top/posts/6ef63e2d/">https://akilar.top/posts/6ef63e2d/</a> 中源码存放方案一栏</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/03/28/boke/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%B4%E6%8A%A4/" rel="tag">维护</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/03/01/title%20%E5%88%A9%E7%94%A8HTTP%20canary%EF%BC%88%E5%B0%8F%E9%BB%84%E9%B8%9F%EF%BC%89%E5%AF%B9%E8%BD%AF%E4%BB%B6%E7%AE%80%E5%8D%95%E6%8A%93%E5%8C%85/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">浅谈HTTP canary（小黄鸟）对软件简单抓包</div>
+      </a>
+    
+  </nav>
+
+  
+   
+     
+</article>
+
 </section>
-
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -207,6 +386,23 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
