@@ -144,6 +144,106 @@
     
     
     <article
+  id="post-typora"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/08/13/typora/"
+    >Typora图片上传—阿里云OSS “优质图床”</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/08/13/typora/" class="article-date">
+  <time datetime="2021-08-12T16:00:00.000Z" itemprop="datePublished">2021-08-13</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <blockquote>
+<p>typora编写markdown文件时，为方便所插入本地图片随地调用，提供图片自动上传功能，本篇详细介绍typora图片上传到阿里云对象存储OSS相关步骤</p>
+</blockquote>
+<h1 id="1-typora配置"><a href="#1-typora配置" class="headerlink" title="1.typora配置"></a>1.typora配置</h1><p>1.打开typora偏好设置中图像一栏</p>
+<img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/image-20210813211734778.png" alt="image-20210813211734778" style="zoom: 67%;" />
+
+<img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/1.png" alt="1" style="zoom:67%;" />
+
+<p>2.确保typora版本最新，配置如上图所示</p>
+<h1 id="2-阿里云配置"><a href="#2-阿里云配置" class="headerlink" title="2.阿里云配置"></a>2.阿里云配置</h1><h4 id="2-1-开通OSS-创建bucket"><a href="#2-1-开通OSS-创建bucket" class="headerlink" title="2.1 开通OSS 创建bucket"></a>2.1 开通OSS 创建bucket</h4><p>在注册了阿里云的前提下，打开控制台</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/2.png" alt="2"></p>
+<p>点击侧边栏</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/3.png" alt="3"></p>
+<p>点击 对象存储OSS</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/4.png" alt="4"></p>
+<p>选择概览，创建bucket</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/bucket3.png" alt="bucket3"></p>
+<p>配置如下图</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/bucket.png" alt="bucket"></p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/bucket2.png" alt="bucket2"></p>
+<p>创建完成</p>
+<h4 id="2-2-购买资源包"><a href="#2-2-购买资源包" class="headerlink" title="2.2  购买资源包"></a>2.2  购买资源包</h4><p>标准包半年仅4元，非常划算</p>
+<p>资源包管理中选择购买资源包</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/5.png" alt="5"></p>
+<p>选择如下</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/6.png" alt="6"></p>
+<p>购买时长，视自身需求而定</p>
+<h1 id="3-配置typora-gt-阿里云"><a href="#3-配置typora-gt-阿里云" class="headerlink" title="3.配置typora-&gt;阿里云"></a>3.配置typora-&gt;阿里云</h1><h4 id="3-1-新建txt-复制以下内容"><a href="#3-1-新建txt-复制以下内容" class="headerlink" title="3.1 新建txt 复制以下内容"></a>3.1 新建txt 复制以下内容</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;picBed&quot;: &#123;</span><br><span class="line">    &quot;uploader&quot;: &quot;aliyun&quot;,</span><br><span class="line">    &quot;aliyun&quot;: &#123;</span><br><span class="line">    &quot;accessKeyId&quot;: &quot;&quot;,</span><br><span class="line">    &quot;accessKeySecret&quot;: &quot;&quot;,</span><br><span class="line">    &quot;bucket&quot;: &quot;&quot;, &#x2F;&#x2F; 存储空间名</span><br><span class="line">    &quot;area&quot;: &quot;&quot;, &#x2F;&#x2F; 存储区域代号</span><br><span class="line">    &quot;path&quot;: &quot;img&#x2F;&quot;, &#x2F;&#x2F; 自定义存储路径</span><br><span class="line">     &quot;customUrl&quot;: &quot;&quot;, &#x2F;&#x2F; 自定义域名，注意要加 http:&#x2F;&#x2F;或者 https:&#x2F;&#x2F;</span><br><span class="line">     &quot;options&quot;: &quot;&quot; &#x2F;&#x2F; 针对图片的一些后缀处理参数 PicGo 2.2.0+ PicGo-Core 1.4.0+</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;picgoPlugins&quot;: &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上内容为typora上传图片到阿里云的配置文件，关键信息内容在阿里云上获取</p>
+<h4 id="3-2-获取阿里云accesskey"><a href="#3-2-获取阿里云accesskey" class="headerlink" title="3.2 获取阿里云accesskey"></a>3.2 获取阿里云accesskey</h4><p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/key.png" alt="key"></p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/key2.png" alt="key2"></p>
+<p>创建之后得到的id 与 key 分别粘贴到配置文件相应位置中，注意放在双引号” “里</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/peizhi.png" alt="peizhi"></p>
+<h4 id="3-3-获取其他关键信息"><a href="#3-3-获取其他关键信息" class="headerlink" title="3.3 获取其他关键信息"></a>3.3 获取其他关键信息</h4><p>打开 概览</p>
+<p>将获得的信息对应填到新建的文件里 </p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/peizhi2.png" alt="peizhi2"></p>
+<blockquote>
+<p>新建文件只需获取并改动三个内容即可1.bucket  2.area  3.customUrl</p>
+</blockquote>
+<p>目前 前两个已经改动成功，注意customurl虽说可以填写自定义域名，但需要在阿里云中手动绑定已申请过的域名。没申请的话较为麻烦，一般填写oss默认分配域名，域名则为上图 “对应area“ 后面的bucket域名，填写这个即可。</p>
+<h4 id="3-4-向typora导入以上配置好的文件"><a href="#3-4-向typora导入以上配置好的文件" class="headerlink" title="3.4 向typora导入以上配置好的文件"></a>3.4 向typora导入以上配置好的文件</h4><p>在typora偏好设置中选择”打开配置文件“</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/openfile.png" alt="openfile"></p>
+<p>将上述自己配置修改好的文件全文复制到配置文件“config.json”中，完成。</p>
+<p>下图示例完整配置文件</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/peizhi4.png" alt="peizhi4"></p>
+<h1 id="4-配置完成，验证"><a href="#4-配置完成，验证" class="headerlink" title="4.配置完成，验证"></a>4.配置完成，验证</h1><p>点击验证</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/yanzheng.png" alt="yanzheng"></p>
+<p>出现下图提示信息表示成功，可点击生成的url查看上传的图片</p>
+<p><img src="https://typora-chuimber.oss-cn-beijing.aliyuncs.com/img/final.png" alt="final"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-C部分实用函数"
   class="article article-type-post"
   itemscope
